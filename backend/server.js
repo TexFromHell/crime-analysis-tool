@@ -19,12 +19,13 @@ var storage = multer.diskStorage({
     });
   }
 });
-var uploader = multer({ storage: storage });
 
 
 app.get('/', (req, res) => {
 	res.json({message:'yo skrzek'})
 })
+
+var uploader = multer({ storage: storage });
 
 app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
   let results = []

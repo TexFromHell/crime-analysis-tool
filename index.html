@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 75%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
+      <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+          <link rel="stylesheet" type="text/css" href="css/style.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        </head>
 <body>
-<div id="map"></div>
 
-<p>Upload file</p>
-<input type="file"  id="uploadedFile"/>
-<button id="submit">Submit</button>
 
+
+
+
+  <ul id="slide-out-left" class="sidenav" style='width: 50%'>
+      <li><div class="user-view">
+        <div class="background blue">
+        </div>
+      </div></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>FILTERS</a></li>
+
+    </ul>
+    <a href="#" data-target="slide-out-left" class="sidenav-trigger left"><i class="medium material-icons">keyboard_arrow_right</i></a>
+
+
+
+<div id="map">
+    </div>
+
+
+    <ul id="slide-out-right" class="sidenav" style='width: 50%'>
+        <li><div class="user-view">
+          <div class="background blue">
+          </div>
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>FILTERS</a></li>
+        <p>Upload file</p>
+        <input type="file"  id="uploadedFile"/>
+        <button id="submit">Submit</button>
+
+      </ul>
+  <a href="#" data-target="slide-out-right" class="sidenav-trigger right"><i class="medium material-icons">keyboard_arrow_left</i></a>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="js/main.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=API_KEYTUTAJ&callback=initMap"
-        async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV2qZzCUDq27luPpApjoS3VUiQa3S2h8Y&callback=initMap" async defer></script>
 <script src="./framework/renderer.js"></script>
 </body>
 </html>
