@@ -13,37 +13,103 @@
 
 
 
-
+<div id='left'>
   <ul id="slide-out-left" class="sidenav" style='width: 50%'>
-      <li><div class="user-view">
-        <div class="background blue">
+    <li><div class="user-view">
+      <div class="background blue">
+      </div>
         </div>
-      </div></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>FILTERS</a></li>
-
-    </ul>
-    <a href="#" data-target="slide-out-left" class="sidenav-trigger left"><i class="medium material-icons">keyboard_arrow_right</i></a>
-
+    </li>
+        <li><a href="#!"><i class="medium material-icons">filter_list</i><h4>FILTERS</h4></a></li>
+        <div class="divider gray"></div>
+  </ul>
+  <a href="#" data-target="slide-out-left" class="sidenav-trigger left"><i class="medium material-icons">keyboard_arrow_right</i></a>
+</div>
 
 
 <div id="map">
-    </div>
+</div>
 
+<div id='right'>
 
-    <ul id="slide-out-right" class="sidenav" style='width: 50%'>
-        <li><div class="user-view">
-          <div class="background blue">
+  <div id='quick-access'>
+    <div id='map-legend'>
+      <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">
+        <i class="material-icons large">info</i>
+      </a>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>MAP LEGEND</h4>
+            <div class="divider blue"></div>
+
+            <div id='icons'>
+
+            <img src="icons/anti-social.png" alt="Social">
+            <p>Anti-Social Behaviour</p>
+
+            <img src="icons/other-crime.png" alt="Other">
+            <p>Other Crime</p>
+
+            <img src="icons/vehicle.png" alt="Social">
+            <p>Vehicle crime</p>
+
+            <img src="icons/rape.png" alt="Social">
+            <p>Violence and sexual offences</p>
+
+            <img src="icons/public-order.png" alt="Social">
+            <p>Public order</p>
+
+            <img src="icons/other-theft.png" alt="Social">
+            <p>Other theft</p>
+
+            <img src="icons/fire.png" alt="Social">
+            <p>Criminal damage and arson</p>
+
+            <img src="icons/drug.png" alt="Social">
+            <p>Drugs</p>
+
+            <img src="icons/shooting.png" alt="Social">
+            <p>Possession of weapons</p>
+
+            <img src="icons/theft.png" alt="Social">
+            <p>Theft from the person</p>
+
+            <img src="icons/robbery.png" alt="Social">
+            <p>Robbery</p>
+
+            <img src="icons/shop.png" alt="Social">
+            <p>Shoplifting</p>
+
+            <img src="icons/bicycle.png" alt="Social">
+            <p>Bicycle theft</p>
+
+            <img src="icons/burglary.png" alt="Social">
+            <p>Burglary</p>
+
           </div>
-        </div></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>FILTERS</a></li>
-        <p>Upload file</p>
-        <input type="file"  id="uploadedFile"/>
-        <button id="submit">Submit</button>
+          </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-blue btn-flat">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      </ul>
+  <ul id="slide-out-right" class="sidenav" style='width: 50%'>
+    <li><div class="user-view">
+      <div class="background blue">
+        </div>
+        </div>
+    </li>
+      <li><a href="#!"><i class="medium material-icons">menu </i><h4>MAIN MENU</h4></a></li>
+      <div class="divider blue"></div>
+        <p>Upload file</p>
+          <input type="file"  id="uploadedFile"/>
+            <button id="submit">Submit</button>
+  </ul>
   <a href="#" data-target="slide-out-right" class="sidenav-trigger right"><i class="medium material-icons">keyboard_arrow_left</i></a>
 
-
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

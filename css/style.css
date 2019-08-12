@@ -1,14 +1,56 @@
 html, body {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
+#left{
+  display: flex;
+  align-items: center;
+  float:left;
+}
+
 #map {
     height: 100%;
-    width: 100%;
+    width: 95%;
     float: left;
+    border-left: 2px solid #2196f3;
+    border-right: 2px solid #2196f3;
+}
+
+#quick-access{
+  padding-top: 10%;
+  height: 46.8%;
+  text-align: center;
+}
+
+#right {
+  height: 100%;
+}
+
+h4{
+  font-weight: bold;
+  line-height: 150% !important;
+  margin-left: 5% !important;
+  color: #2196f3;
+}
+
+#modal1{
+  width: 25%;
+}
+.a{
+  text-align: center;
+}
+#icons {
+  position: relative;
+  display: inline-table;
+}
+#icons p{
+  color: #2196f3;
+  font-weight: bold;
+}
+.divider {
+  height: 3px !important;
+  margin-bottom: 5%;
 }

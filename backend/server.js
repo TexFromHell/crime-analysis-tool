@@ -34,11 +34,12 @@ app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
     .on('data', (row) => {
       console.log(row.Longitude, 'long');
       console.log(row.Latitude, 'lat');
+      console.log(row['Crime type'], 'crime')
 
       let data = {
         long:row.Longitude,
         lat:row.Latitude,
-        crime:row['Crime type']
+        crime:row['Crime type'],
       }
 
       results.push(data)

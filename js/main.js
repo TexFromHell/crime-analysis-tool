@@ -16,13 +16,57 @@ window.addEventListener('load', () => {
             let markerLoc = new google.maps.LatLng(item.lat,item.long);
             console.log(item)
 
+          const crimeIcons = {
+            'Anti-social behaviour': {
+              url: 'icons/anti-social.png'
+            },
+            'Other crime': {
+              url:'icons/other-crime.png'
+            },
+            'Vehicle crime': {
+              url: 'icons/vehicle.png'
+            },
+            'Violence and sexual offences': {
+              url: 'icons/rape.png'
+            },
+            'Public order': {
+              url: 'icons/public-order.png'
+            },
+            'Other theft': {
+              url: 'icons/other-theft.png'
+            },
+            'Criminal damage and arson': {
+              url: 'icons/fire.png'
+            },
+            'Drugs': {
+              url: 'icons/drug.png'
+            },
+            'Possession of weapons': {
+              url: 'icons/shooting.png'
+            },
+            'Theft from the person': {
+              url: 'icons/theft.png'
+            },
+            'Robbery': {
+              url: 'icons/robbery.png'
+            },
+            'Shoplifting': {
+              url: 'icons/shop.png'
+            },
+            'Bicycle theft': {
+              url: 'icons/bicycle.png'
+            },
+            'Burglary': {
+              url: 'icons/burglary.png'
+            }
+          }
+
             var marker = new google.maps.Marker({
               position: markerLoc,
-              title:item.crime
+              title: item.crime,
+              icon: crimeIcons[item.crime]
             });
-
             marker.setMap(map);
-
             map.panTo(new google.maps.LatLng(item.lat, item.long))
           })
         })
@@ -61,4 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var instance1 = M.Sidenav.init(leftBar);
   var rightBar = document.getElementById('slide-out-right')
   var instance2 = M.Sidenav.init(rightBar, {edge:'right'});
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
 });
