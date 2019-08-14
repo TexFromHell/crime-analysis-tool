@@ -11,17 +11,83 @@
 <body>
 
 
-
-
 <div id='left'>
-  <ul id="slide-out-left" class="sidenav" style='width: 50%'>
+  <ul id="slide-out-left" class="sidenav" style='width: 30%'>
     <li><div class="user-view">
       <div class="background blue">
       </div>
         </div>
     </li>
-        <li><a href="#!"><i class="medium material-icons">filter_list</i><h4>FILTERS</h4></a></li>
-        <div class="divider gray"></div>
+        <li><a href="#!"><i class="material-icons medium">filter_list</i><h4>FILTERS</h4></a></li>
+        <div class="divider"></div>
+
+  <div id='closeLeftNav'>
+    <a href="#" data-target="slide-out-right" class="sidenav-close"><i class="medium material-icons">keyboard_arrow_left</i></a>
+  </div>
+
+
+<div id='filterBox'>
+
+  <form action="#">
+    <p>
+      <label>
+        <input type="checkbox" />
+        <span>Show Icon Names</span>
+      </label>
+    </p>
+    <label>
+      <input type="checkbox"/>
+      <span>Show Percentage Accuracy</span>
+    </label>
+  </form>
+
+<form action="#">
+  <p class="range-field">
+    Limit The number of pinpoints on the map:</p>
+    <p>
+    <input type="range" id="test5" min="0" max="100" style='width: 90%;'/>
+  </p>
+</form>
+
+
+</div>
+
+  <div id='crimeTypeBox'>
+    <p> Display by Crime Type: </p>
+    <form action="#">
+      <p>
+        <label>
+          <input type="checkbox" />
+          <span>Show Icon Names</span>
+        </label>
+      </p>
+
+      <form action="#">
+        <p>
+          <label>
+            <input type="checkbox" />
+            <span>Show Icon Names</span>
+          </label>
+        </p>
+
+        <form action="#">
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>Show Icon Names</span>
+            </label>
+          </p>
+
+          <form action="#">
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>Show Icon Names</span>
+              </label>
+            </p>
+
+  </div>
+<a class="waves-effect blue btn-large" id='filterAccptbtn'><i class="material-icons"></i>Accept</a>
   </ul>
   <a href="#" data-target="slide-out-left" class="sidenav-trigger left"><i class="medium material-icons">keyboard_arrow_right</i></a>
 </div>
@@ -30,8 +96,8 @@
 <div id="map">
 </div>
 
-<div id='right'>
 
+<div id='right'>
   <div id='quick-access'>
     <div id='map-legend'>
       <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">
@@ -39,11 +105,10 @@
       </a>
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h4>MAP LEGEND</h4>
-            <div class="divider blue"></div>
+            <h1>MAP LEGEND</h1>
+            <div class="divider"></div>
 
             <div id='icons'>
-
             <img src="icons/anti-social.png" alt="Social">
             <p>Anti-Social Behaviour</p>
 
@@ -86,29 +151,59 @@
             <img src="icons/burglary.png" alt="Social">
             <p>Burglary</p>
 
+            </div>
           </div>
+          <div class="modal-footer">
+            <a href="#!" id='modalBtn' class="modal-close waves-effect waves btn-flat blue">Close</a>
           </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-blue btn-flat">Close</a>
-        </div>
       </div>
     </div>
   </div>
 
-  <ul id="slide-out-right" class="sidenav" style='width: 50%'>
+  <ul id="slide-out-right" class="sidenav" style='width: 40%'>
     <li><div class="user-view">
       <div class="background blue">
         </div>
         </div>
     </li>
-      <li><a href="#!"><i class="medium material-icons">menu </i><h4>MAIN MENU</h4></a></li>
-      <div class="divider blue"></div>
+      <li><a href="#!"><i class="material-icons medium">menu</i><h4>MAIN MENU</h4></a></li>
+      <div class="divider"></div>
+
+      <div id='closeRightNav'>
+        <a href="#" data-target="slide-out-right" class="sidenav-close right"><i class="medium material-icons">keyboard_arrow_right</i></a>
+      </div>
+      <div id='tabs'>
+
+        <div id='messageFeedTab'>
+          <a class="waves-effect blue btn-large" id='messageFeedBtn'><i class="material-icons left">message</i>Message Feed</a>
+        </div>
+        <div id='datasetTab'>
+        <a class="waves-effect blue btn-large" id='datasetBtn'><i class="material-icons left">data_usage</i>Dataset tab</a>
+      </div>
+        <div id='databaseTab'>
+        <a class="waves-effect blue btn-large" id='databaseBtn'><i class="material-icons left">storage</i>Database tab</a>
+      </div>
+        <div id='FilterOptionsTab'>
+        <a class="waves-effect blue btn-large" id='filterOptBtn'><i class="material-icons left">filter_list</i>Filter options tab</a>
+      </div>
+        <div id='uploadNewDataset'>
+        <a class="waves-effect blue btn-large" id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload new dataset</a>
+      </div>
+    </div>
+
+<div class="divider"></div>
+
+<footer>
+  <p> FOOTER </p>
+</footer>
+
+    <div id='upload file'>
         <p>Upload file</p>
-          <input type="file"  id="uploadedFile"/>
+          <input type="file" id="uploadedFile"/>
             <button id="submit">Submit</button>
+          </div>
   </ul>
   <a href="#" data-target="slide-out-right" class="sidenav-trigger right"><i class="medium material-icons">keyboard_arrow_left</i></a>
-
 </div>
 
 

@@ -1,22 +1,67 @@
 html, body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.disable {
+  opacity: 0.5;
 }
 #left{
   display: flex;
   align-items: center;
   float:left;
 }
+.divider {
+  margin-bottom: 5%;
+}
+#closeLeftNav {
+  position: absolute;
+  max-width: 7%;
+  height: 10%;
+  top: 0;
+  bottom: 0;
+  left: 90%;
+  right: 0;
+  margin: auto;
+}
+#crimeTypeBox{
+  min-width: 80%;
+  height: 40%;
+  border: 2px solid #2196f3;
+  border-radius: 5px;
+  position: relative;
+  margin: 5%;
+  display: inline-table;
+  padding: 0% 0% 0% 5%;
+  justify-content: space-between;
+}
 
+#filterBox {
+  width: 80%;
+  height: 25%;
+  margin: 6%;
+  border: 2px solid #2196f3;
+  border-radius: 5px;
+  position: relative;
+  margin: 5%;
+  padding: 5%;
+  display: inline-grid;
+}
+
+#filterAccptbtn{
+  position: relative;
+  width: 80%;
+  left: 5%;
+
+}
 #map {
-    height: 100%;
-    width: 95%;
-    float: left;
-    border-left: 2px solid #2196f3;
-    border-right: 2px solid #2196f3;
+  height: 100%;
+  width: 95%;
+  float: left;
+  border-left: 2px solid #2196f3;
+  border-right: 2px solid #2196f3;
 }
 
 #quick-access{
@@ -29,28 +74,66 @@ html, body {
   height: 100%;
 }
 
+#closeRightNav {
+  position: absolute;
+  max-width: 7%;
+  height: 10%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 93%;
+  margin: auto;
+}
+
+h1{
+  font-size: 3rem !important;
+  color: #2196f3;
+}
 h4{
   font-weight: bold;
-  line-height: 150% !important;
-  margin-left: 5% !important;
   color: #2196f3;
+  margin-left: 15% !important;
+  line-height: 138% !important;
 }
 
 #modal1{
   width: 25%;
+  background-color: rgba(50%, 0, 0, 0.6);
 }
+#modalBtn {
+  color: white;
+}
+
 .a{
   text-align: center;
 }
-#icons {
-  position: relative;
-  display: inline-table;
+
+#tabs {
+  margin-top: 8%;
+  display: grid;
+  margin-left: 15%;
+  margin-right: 1%;
 }
-#icons p{
+
+#slide-out-right i.medium, #slide-out-left i.medium {
   color: #2196f3;
-  font-weight: bold;
 }
-.divider {
-  height: 3px !important;
-  margin-bottom: 5%;
+
+#tabs i{
+  font-size: 3.5rem !important;
+}
+
+#messageFeedBtn, #datasetBtn, #databaseBtn, #filterOptBtn{
+  width: 95%;
+  display: inline-block;
+  margin-bottom: 4%;
+  font-size: 1.3rem;
+  padding: 4% 23% 14% 8% !important;
+}
+#newDatasetBtn {
+  width: 95%;
+  display: inline-block;
+  margin-bottom: 4%;
+  font-size: 1.3rem;
+  padding: 4% 23% 14% 8% !important;
 }

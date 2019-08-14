@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+
   const submitButton = window.submit;
   let map = initMap()
 
@@ -71,7 +72,35 @@ window.addEventListener('load', () => {
           })
         })
   })
+
+  function enableTabs() {
+    var el = document.getElementById('tabs'),
+      all = el.getElementsByTagName('div'),
+        i;
+    for (i = 0; i < all.length; i++) {
+      all[i].style.display =' grid'
+    }
+  }
+  document.getElementById('closeRightNav').onclick = function () {
+    enableTabs('tabs');
+  }
+
+  function disableTabs() {
+    var el = document.getElementById('tabs'),
+      all = el.getElementsByTagName('div'),
+        i;
+    for (i = 0; i < all.length; i++) {
+      all[i].style.display =' none'
+    }
+  }
+  document.getElementById('tabs').onclick = function () {
+    disableTabs('tabs');
+  }
 })
+
+
+
+
 
 function uploadFile(url, data) {
   return new Promise((resolve, reject) => {
@@ -105,7 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var instance1 = M.Sidenav.init(leftBar);
   var rightBar = document.getElementById('slide-out-right')
   var instance2 = M.Sidenav.init(rightBar, {edge:'right'});
+
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.modal');
