@@ -74,10 +74,9 @@ window.addEventListener('load', () => {
   })
 
   const menuWindows = Array.from(document.querySelectorAll('.menuWindow'))
-
   const tabs = Array.from(document.querySelectorAll('.tabItem'))
-
   const mainMenu = window.mainMenu
+  const back = window.closeRightNav
 
   mainMenu.addEventListener('click', () => {
     window.tabs.classList.remove('hidden') // show the tabs again
@@ -85,6 +84,7 @@ window.addEventListener('load', () => {
     menuWindows.map((window) => {
       window.classList.add('hidden') //hide all current opened windows
     })
+
   })
 
   tabs.map((tab) => {
@@ -95,15 +95,10 @@ window.addEventListener('load', () => {
         if (toShow) {
           toShow.classList.remove('hidden')
         }
-        
         window.tabs.classList.add('hidden')
-
       })
   })
 })
-
-
-
 
 
 function uploadFile(url, data) {
