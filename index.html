@@ -166,27 +166,41 @@
         </div>
         </div>
     </li>
-      <li><a href="#!"><i class="material-icons medium">menu</i><h4>MAIN MENU</h4></a></li>
+      <li><a href="#!" id="mainMenu"><i class="material-icons medium">menu</i><h4>MAIN MENU</h4></a></li>
       <div class="divider"></div>
 
       <div id='closeRightNav'>
         <a href="#" data-target="slide-out-right" class="sidenav-close right"><i class="medium material-icons">keyboard_arrow_right</i></a>
       </div>
+      <div id="messageFeed" class="hidden menuWindow">
+        <h1>Message feed</h1>
+      </div> 
+      <div id="dataset" class="hidden menuWindow">
+        <h1>Dataset</h1>
+      </div> 
+      <div id="database" class="hidden menuWindow">
+        <h1>Database</h1>
+      </div> 
+      <div id="filterOptions" class="hidden menuWindow">
+        <h1>Filter options</h1>
+      </div> 
+      <div id="newDataset" class="hidden menuWindow">
+        <h1>Upload new database</h1>
+      </div> 
       <div id='tabs'>
-
-        <div id='messageFeedTab'>
+        <div id='messageFeedTab' class="tabItem" data-target="messageFeed">
           <a class="waves-effect blue btn-large" id='messageFeedBtn'><i class="material-icons left">message</i>Message Feed</a>
         </div>
-        <div id='datasetTab'>
+        <div id='datasetTab' class="tabItem" data-target="dataset">
         <a class="waves-effect blue btn-large" id='datasetBtn'><i class="material-icons left">data_usage</i>Dataset tab</a>
       </div>
-        <div id='databaseTab'>
+        <div id='databaseTab' class="tabItem" data-target="database">
         <a class="waves-effect blue btn-large" id='databaseBtn'><i class="material-icons left">storage</i>Database tab</a>
       </div>
-        <div id='FilterOptionsTab'>
+        <div id='FilterOptionsTab' class="tabItem" data-target="filterOptions">
         <a class="waves-effect blue btn-large" id='filterOptBtn'><i class="material-icons left">filter_list</i>Filter options tab</a>
       </div>
-        <div id='uploadNewDataset'>
+        <div id='uploadNewDataset' class="tabItem" data-target="newDataset">
         <a class="waves-effect blue btn-large" id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload new dataset</a>
       </div>
     </div>

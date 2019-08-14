@@ -73,29 +73,33 @@ window.addEventListener('load', () => {
         })
   })
 
-  function enableTabs() {
-    var el = document.getElementById('tabs'),
-      all = el.getElementsByTagName('div'),
-        i;
-    for (i = 0; i < all.length; i++) {
-      all[i].style.display =' grid'
-    }
-  }
-  document.getElementById('closeRightNav').onclick = function () {
-    enableTabs('tabs');
-  }
+  const menuWindows = Array.from(document.querySelectorAll('.menuWindow'))
 
-  function disableTabs() {
-    var el = document.getElementById('tabs'),
-      all = el.getElementsByTagName('div'),
-        i;
-    for (i = 0; i < all.length; i++) {
-      all[i].style.display =' none'
-    }
-  }
-  document.getElementById('tabs').onclick = function () {
-    disableTabs('tabs');
-  }
+  const tabs = Array.from(document.querySelectorAll('.tabItem'))
+
+  const mainMenu = window.mainMenu
+
+  mainMenu.addEventListener('click', () => {
+    window.tabs.classList.remove('hidden') // show the tabs again
+
+    menuWindows.map((window) => {
+      window.classList.add('hidden') //hide all current opened windows
+    })
+  })
+
+  tabs.map((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-target')
+        const toShow = document.getElementById(target)
+
+        if (toShow) {
+          toShow.classList.remove('hidden')
+        }
+        
+        window.tabs.classList.add('hidden')
+
+      })
+  })
 })
 
 
