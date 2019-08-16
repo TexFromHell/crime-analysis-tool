@@ -4,9 +4,12 @@ window.addEventListener('load', () => {
     let map = initMap()
 
     submitButton.addEventListener('click', () => {
-        let selectedFile = window.uploadedFile.files[0]
 
-        console.log(selectedFile.path)
+        let selectedFile = window.uploadedFile.files[0]
+        let selectedFileType = selectedFile.type
+
+        if (selectedFileType == 'text/csv') {
+          console.log('correct')
 
         let data = new FormData();
         data.append('uploadedFile', selectedFile);
@@ -71,8 +74,11 @@ window.addEventListener('load', () => {
                 map.panTo(new google.maps.LatLng(item.lat, item.long))
             })
         })
-    })
-
+    }
+    else {
+        M.toast({html: 'Invalid file type format. Please upload datasets in .csv format only.'})
+    }
+})
     const menuWindows = Array.from(document.querySelectorAll('.menuWindow'))
     const tabs = Array.from(document.querySelectorAll('.tabItem'))
     const mainMenu = window.mainMenu
@@ -147,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const target = qaAccessed.getAttribute('data-target')
         const toShow = document.getElementById(target)
         const menuWindows = Array.from(document.querySelectorAll('.menuWindow'))
-        
+
         menuWindows.map((window) => {
             window.classList.add('hidden')
         })

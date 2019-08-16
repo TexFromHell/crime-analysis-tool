@@ -16,6 +16,7 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-snackbar": "^0.1.15"
   }
 }
