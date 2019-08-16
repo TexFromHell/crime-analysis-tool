@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Map</title>
+    <title>Crime analysis Tool</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -12,9 +12,9 @@
 
 
 <div id='left'>
-  <div id='filter_access'>
-  <a class="waves-effect waves-light blue btn">
-    <i class="material-icons large">message</i>
+  <div id='qaFilters'>
+  <a href="#" data-target="slide-out-left" class="waves-effect waves-light blue btn sidenav-trigger left">
+      <i class="material-icons large">filter_list</i>
   </a>
 </div>
     <ul id="slide-out-left" class="sidenav" style='width: 40%'>
@@ -66,31 +66,31 @@
                     <span>Show Icon Names</span>
                 </label>
               </p>
-
-              <form action="#">
+            </form>
+            <form action="#">
+              <p>
+                <label>
+                  <input type="checkbox"/>
+                    <span>Show Icon Names</span>
+                </label>
+              </p>
+            </form>
+            <form action="#">
                 <p>
-                  <label>
-                    <input type="checkbox"/>
-                      <span>Show Icon Names</span>
-                  </label>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Show Icon Names</span>
+                    </label>
                 </p>
-
-                <form action="#">
-                    <p>
-                        <label>
-                            <input type="checkbox"/>
-                            <span>Show Icon Names</span>
-                        </label>
-                    </p>
-
-                  <form action="#">
-                      <p>
-                          <label>
-                              <input type="checkbox"/>
-                              <span>Show Icon Names</span>
-                          </label>
-                      </p>
-
+            </form>
+            <form action="#">
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Show Icon Names</span>
+                    </label>
+                </p>
+            </form>
         </div>
         <a class="waves-effect blue btn-large" id='filterAccptbtn'><i class="material-icons"></i>Accept</a>
     </ul>
@@ -104,11 +104,14 @@
 
 
 <div id='right'>
+
     <div id='quick-access'>
+
         <div id='map-legend'>
             <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">
                 <i class="material-icons large">info</i>
             </a>
+
             <div id="modal1" class="modal">
                 <div class="modal-content">
                     <h1>MAP LEGEND</h1>
@@ -164,32 +167,32 @@
                 </div>
             </div>
         </div>
-        <div id='menu'>
+
+        <div id='qaMenu' data-target="slide-out-right" class="sidenav-trigger right">
         <a class="waves-effect waves-light blue btn">
             <i class="material-icons large">menu</i>
         </a>
       </div>
-      <div id='datasetacc'>
+
+      <div id='qaMessage' class='tabItem' data-target='messageFeed'>
+      <a class="waves-effect waves-light blue btn">
+        <i class="material-icons large">message</i>
+      </a>
+    </div>
+
+      <div id='qaDataset' class='tabItem' data-target='dataset'>
         <a class="waves-effect waves-light blue btn">
           <i class="material-icons large">data_usage</i>
         </a>
       </div>
-        <div id='message'>
-        <a class="waves-effect waves-light blue btn">
-          <i class="material-icons large">message</i>
-        </a>
-      </div>
-      <div id='storage'>
+
+      <div id='qaStorage' class='tabItem' data-target='database'>
         <a class="waves-effect waves-light blue btn">
           <i class="material-icons large">storage</i>
         </a>
       </div>
-      <div id='filter_list'>
-        <a class="waves-effect waves-light blue btn">
-          <i class="material-icons large">filter_list</i>
-        </a>
-      </div>
-      <div id=' uploadNew'>
+
+      <div id='qaUploadNew' class='tabItem' data-target='newDataset'>
         <a class="waves-effect waves-light blue btn">
           <i class="material-icons large">add_circle</i>
         </a>
@@ -204,71 +207,103 @@
             </div>
         </li>
         <li><a href="#!" id="mainMenu"><i class="material-icons medium">menu</i><h4>MAIN MENU
-          <div id='back' class='hidden menuWindow'><i class="material-icons medium">keyboard_return</i>
+          <div id='back' class='hidden menuWindow'><i class="material-icons medium">reply_all</i>
               </div>
             </h4>
           </a>
         </li>
         <div class="divider"></div>
 
-        <div id='closeRightNav'>
-            <a href="#" data-target="slide-out-right" class="sidenav-close show-on-large right"><i
-                    class="medium material-icons">keyboard_arrow_right</i></a>
-        </div>
-        <div id="messageFeed" class="hidden menuWindow">
-            <h1>Message feed</h1>
-        </div>
-        <div id="dataset" class="hidden menuWindow">
-            <h1>Dataset</h1>
-        </div>
-        <div id="database" class="hidden menuWindow">
-            <h1>Database</h1>
-        </div>
-        <div id="filterOptions" class="hidden menuWindow">
-            <h1>Dataset Filter options</h1>
-        </div>
-        <div id="newDataset" class="hidden menuWindow">
-            <h1>Upload new Dataset</h1>
-
-            <div id='upload file'>
-                <p>Upload file</p>
-                <input type="file" id="uploadedFile"/>
-                <button id="submit">Submit</button>
-            </div>
-        </div>
-
         <div id='tabs'>
             <div id='messageFeedTab' class="tabItem" data-target="messageFeed">
                 <a class="waves-effect blue btn-large" id='messageFeedBtn'><i class="material-icons left">message</i>Message
                     Feed</a>
             </div>
+
             <div id='datasetTab' class="tabItem" data-target="dataset">
                 <a class="waves-effect blue btn-large" id='datasetBtn'><i class="material-icons left">data_usage</i>Dataset
                     tab</a>
             </div>
+
             <div id='databaseTab' class="tabItem" data-target="database">
                 <a class="waves-effect blue btn-large" id='databaseBtn'><i class="material-icons left">storage</i>Database
                     tab</a>
             </div>
+
             <div id='FilterOptionsTab' class="sidenav-trigger left" data-target="slide-out-left">
                 <a class="waves-effect blue btn-large" id='filterOptBtn'><i class="material-icons left">filter_list</i>Database Filter
                     options</a>
             </div>
+
             <div id='uploadNewDataset' class="tabItem" data-target="newDataset">
                 <a class="waves-effect blue btn-large" id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload
                     new dataset</a>
             </div>
         </div>
+
+        <div id='closeRightNav'>
+            <a href="#" data-target="slide-out-right" class="sidenav-close show-on-large right"><i
+                    class="medium material-icons">keyboard_arrow_right</i></a>
+        </div>
+
+        <div id="messageFeed" class="hidden menuWindow">
+            <h1>Message feed</h1>
+        </div>
+
+        <div id="dataset" class="hidden menuWindow">
+            <h1>Dataset</h1>
+            <div id='sendToDb'>
+              <a class="waves-effect waves-light blue btn large">
+                <i class="material-icons small">file_upload</i>Send Dataset to Database</a>
+            </div>
+            <div id='removeDataset'>
+              <a class="waves-effect waves-light blue btn large">
+                <i class="material-icons large">delete</i>Remove This Dataset</a>
+            </div>
+        </div>
+        <div id="database" class="hidden menuWindow">
+            <h1>Database</h1>
+            <div id='generateReport'>
+              <a class="waves-effect waves-light blue btn large">
+                <i class="material-icons large">flag</i>Generate Report</a>
+            <div id='viewCrimeHistory'>
+                <a class="waves-effect waves-light blue btn modal-trigger" href="#modal2">
+                    <i class="material-icons large">info</i>View Crime History</a>
+                  <div id="modal2" class="modal">
+                    <div class="modal-content">
+                      <p> crime id box list </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="filterOptions" class="hidden menuWindow">
+            <h1>Dataset Filter options</h1>
+        </div>
+
+        <div id="newDataset" class="hidden menuWindow">
+            <h1>Upload new Dataset</h1>
+            <div id='upload file'>
+                <p>Upload file</p>
+                <input type="file" id="uploadedFile"/>
+                  <button id="submit">Submit</button>
+
+            </div>
+        </div>
         <div class="divider"></div>
     </ul>
+
+
     <div id='closeRightBtn'>
     <a href="#" data-target="slide-out-right" class="sidenav-trigger right"><i class="medium material-icons">keyboard_arrow_left</i></a>
   </div>
-    <div id='notifications_access'>
+
+    <div id='qaNotifications'>
     <a class="waves-effect waves-light blue btn">
       <i class="material-icons large">notifications</i>
     </a>
   </div>
+
 </div>
 
 

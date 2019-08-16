@@ -13,8 +13,9 @@ html, body {
 #left {
     text-align: center;
 }
-#filter_access {
+#qaFilters {
   padding-top: 10%;
+  padding-left: 5%;
   height: 46.8%;
   text-align: center;
 }
@@ -110,6 +111,10 @@ h4 {
     width: 25%;
     background-color: rgba(50%, 0, 0, 0.6);
 }
+#modal2 {
+  width: 25%;
+  background-color: rgba(50%, 0, 0, 0.6);
+}
 
 #modalBtn {
     color: white;
@@ -157,6 +162,28 @@ h4 {
     padding: 4% 22% 14% 8% !important;
 }
 
+#sendToDb {
+  position: relative;
+  width: 60%;
+  display: grid;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#removeDataset {
+  position: relative;
+  width: 60%;
+  display: grid;
+  margin-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#generateReport {
+
+}
+
 .hidden {
     display: none !important;
 }
@@ -165,18 +192,20 @@ h4 {
   color: red;
   background: red;
 }
-#notifications_access{
+#qaNotifications{
   text-align: center;
   position: sticky;
   top: 89%;
 }
-#filter_list {
+#qaMenu {
   margin-bottom: 5%;
+  position: relative;
+  right: 6%;
 }
 
 #map-legend {
   margin-bottom: 50%;
 }
-#menu, #message, #datasetacc, #storage {
+#filter_list , #qaDataset, #qaMessage, #qaStorage {
   margin-bottom: 5%;
 }

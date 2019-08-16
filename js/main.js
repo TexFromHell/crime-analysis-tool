@@ -98,9 +98,11 @@ window.addEventListener('load', () => {
             }
             window.tabs.classList.add('hidden')
         })
-    })
-})
 
+    })
+
+
+})
 
 function uploadFile(url, data) {
     return new Promise((resolve, reject) => {
@@ -133,9 +135,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var leftBar = document.getElementById('slide-out-left')
     var instance1 = M.Sidenav.init(leftBar);
     var rightBar = document.getElementById('slide-out-right')
-    var instance2 = M.Sidenav.init(rightBar, {edge: 'right'});
-
+    window.instance2 = M.Sidenav.init(rightBar, {edge: 'right'});
 });
+
+    let qaAccess = Array.from(document.querySelectorAll('.tabItem'))
+
+    qaAccess.map((qaAccessed) => {
+      qaAccessed.addEventListener('click', () => {
+        instance2.open();
+
+        const target = qaAccessed.getAttribute('data-target')
+        const toShow = document.getElementById(target)
+        const menuWindows = Array.from(document.querySelectorAll('.menuWindow'))
+        
+        menuWindows.map((window) => {
+            window.classList.add('hidden')
+        })
+})
+
+})
 
 
 document.addEventListener('DOMContentLoaded', function () {
