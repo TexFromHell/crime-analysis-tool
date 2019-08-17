@@ -113,7 +113,7 @@
     <div id='quick-access'>
 
         <div id='map-legend'>
-            <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">
+            <a class="waves-effect waves-light blue btn modal-trigger tooltipped"data-position="left" data-tooltip="View map icon legend." href="#modal1">
                 <i class="material-icons large">info</i>
             </a>
 
@@ -185,11 +185,6 @@
       </a>
     </div>
 
-
-        <a id='qaDataset' ata-target='dataset' class="waves-effect waves-light blue btn tabItem" disabled>
-          <i class="material-icons large">data_usage</i>
-        </a>
-
       <div id='qaStorage' class='tabItem' data-target='database'>
         <a class="waves-effect waves-light blue btn">
           <i class="material-icons large">storage</i>
@@ -197,10 +192,15 @@
       </div>
 
       <div id='qaUploadNew' class='tabItem' data-target='newDataset'>
-        <a class="waves-effect waves-light blue btn">
+        <a class="waves-effect waves-light blue btn tooltipped" data-position="left" data-tooltip="Upload new dataset to unlock dataset tab.">
           <i class="material-icons large">add_circle</i>
         </a>
       </div>
+
+      <a id='qaDataset' disabled data-target='dataset' class="waves-effect waves-light blue btn tabItem">
+        <i class="material-icons large">data_usage</i>
+      </a>
+
     </div>
 
     <ul id="slide-out-right" class="sidenav" style='width: 35%'>
@@ -220,28 +220,30 @@
 
         <div id='tabs'>
             <div id='messageFeedTab' class="tabItem" data-target="messageFeed">
-                <a class="waves-effect blue btn-large" id='messageFeedBtn'><i class="material-icons left">message</i>Message
+                <a class="waves-effect blue btn-large" id='messageFeedBtn'><i class="material-icons left">message</i>The Message
                     Feed</a>
             </div>
 
-            <div id='datasetTab' class="tabItem" data-target="dataset">
-                <a class="waves-effect blue btn-large" id='datasetBtn'><i class="material-icons left">data_usage</i>Dataset
-                    tab</a>
+            <div id='databaseTab'>
+              <a class="waves-effect blue btn-large databaseBtn tabItem" id='databaseBtn' data-target="database">
+                <i class="material-icons left">storage</i>
+                The Database</a>
             </div>
 
-                <a class="waves-effect blue btn-large databaseBtn tabItem" disabled id='databaseTab' data-target="database">
-                  <i class="material-icons left">storage</i>
-                  Database tab</a>
-
             <div id='FilterOptionsTab' class="sidenav-trigger left" data-target="slide-out-left">
-                <a class="waves-effect blue btn-large" id='filterOptBtn'><i class="material-icons left">filter_list</i>Database Filter
-                    options</a>
+                <a class="waves-effect blue btn-large tooltipped" data-position="bottom" data-tooltip="Dual Sidebars Mode" id='filterOptBtn'><i class="material-icons left">filter_list</i>Database Filter
+                    Options</a>
             </div>
 
             <div id='uploadNewDataset' class="tabItem" data-target="newDataset">
-                <a class="waves-effect blue btn-large" id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload
-                    new dataset</a>
+                <a class="waves-effect blue btn-large tooltipped" data-position="bottom" data-tooltip="Upload new dataset to unlock dataset tab." id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload
+                    New Dataset</a>
             </div>
+
+            <a class="waves-effect blue btn-large datasetBtn tabItem" id='datasetBtn' data-target="dataset" disabled>
+              <i class="material-icons left">data_usage</i>The Dataset
+                </a>
+
         </div>
 
         <div id='closeRightNav'>
