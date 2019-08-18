@@ -28,7 +28,10 @@ app.get('/', (req, res) => {
 var uploader = multer({storage: storage});
 
 app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
+
     let results = []
+    let crimes = {}
+
     fs.createReadStream(req.file.originalname)
         .pipe(csv())
         .on('data', (row) => {
@@ -37,19 +40,30 @@ app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
             console.log(row['Crime type'], 'crime')
 
             let data = {
+                Id: row['Crime ID'],
+                date: row.Month,
                 long: row.Longitude,
                 lat: row.Latitude,
-                crime: row['Crime type'],
+                location: row.Location,
+                crime: row['Crime type']
+            }
+
+            if (crimes.hasOwnProperty(row['Crime type']))  {
+              crimes[row['Crime type']].count += 1
+            } else {
+              crimes[row['Crime type']] = {
+                count:1
+              }
             }
 
             results.push(data)
+
         })
         .on('end', () => {
             console.log('CSV file successfully processed');
-            res.json({results: results})
+            res.json({results: results, crime: crimes})
         });
 })
-
 
 //server logic here
 

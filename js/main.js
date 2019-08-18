@@ -15,10 +15,28 @@ window.addEventListener('load', () => {
           data.append('uploadedFile', selectedFile);
 
           uploadFile('/uploadFile', data).then((response) => {
-              console.log(response)
+
+            totalCrimes = response.results.length
+            console.log(totalCrimes)
+
+            nrOfAntiSocial = response.crime['Anti-social behaviour'];
+            nrOfOtherCrime = response.crime['Other crime'];
+            nrOfVehicle = response.crime['Vehicle crime'];
+            nrOfViolence = response.crime['Violence and sexual offences'];
+            nrOfPublic = response.crime['Public order'];
+            nrOfOtherTheft = response.crime['Other theft'];
+            nrOfCriminalDamage = response.crime['Criminal damage and arson'];
+            nrOfDrugs = response.crime['Drugs'];
+            nrOfPossessions = response.crime['Possession of weapons'];
+            nrOfTheft = response.crime['Theft from the person'];
+            nrOfRobbery = response.crime['Robbery'];
+            nrOfShopLifting = response.crime['Shoplifting'];
+            nrOfBicycle = response.crime['Bicycle theft'];
+            nrOfBurglary = response.crime['Burglary'];
+
+
               response.results.forEach((item) => {
                   let markerLoc = new google.maps.LatLng(item.lat, item.long);
-                  console.log(item)
 
                   const crimeIcons = {
                       'Anti-social behaviour': {
@@ -72,6 +90,9 @@ window.addEventListener('load', () => {
                   });
                   marker.setMap(map);
                   map.panTo(new google.maps.LatLng(item.lat, item.long))
+
+
+
               })
             })
 
