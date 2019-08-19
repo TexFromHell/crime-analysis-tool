@@ -21,12 +21,13 @@ window.addEventListener('load', () => {
               let crimeTypes = response.crime
               console.log(crimeTypes)
 
-              for (let i = 0; i < response.crime.length; i++) {
-                let div = document.createElement('div')
-                div.textContent = crimeTypes['count']
+
+              Object.keys(crimeTypes).map((type) => {
+               let div = document.createElement('div')
+                div.textContent = crimeTypes[type].count
                 let parent = document.getElementById('crimeNumbers')
                 parent.appendChild(div)
-              }
+              })
 
 
               response.results.forEach((item) => {
