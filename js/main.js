@@ -15,24 +15,18 @@ window.addEventListener('load', () => {
           data.append('uploadedFile', selectedFile);
 
           uploadFile('/uploadFile', data).then((response) => {
+            //TO >>>>
+              let totalCrimes = response.results
+              console.log(totalCrimes)
+              let crimeTypes = response.crime
+              console.log(crimeTypes)
 
-            totalCrimes = response.results.length
-            console.log(totalCrimes)
-
-            nrOfAntiSocial = response.crime['Anti-social behaviour'];
-            nrOfOtherCrime = response.crime['Other crime'];
-            nrOfVehicle = response.crime['Vehicle crime'];
-            nrOfViolence = response.crime['Violence and sexual offences'];
-            nrOfPublic = response.crime['Public order'];
-            nrOfOtherTheft = response.crime['Other theft'];
-            nrOfCriminalDamage = response.crime['Criminal damage and arson'];
-            nrOfDrugs = response.crime['Drugs'];
-            nrOfPossessions = response.crime['Possession of weapons'];
-            nrOfTheft = response.crime['Theft from the person'];
-            nrOfRobbery = response.crime['Robbery'];
-            nrOfShopLifting = response.crime['Shoplifting'];
-            nrOfBicycle = response.crime['Bicycle theft'];
-            nrOfBurglary = response.crime['Burglary'];
+              for (let i = 0; i < response.crime.length; i++) {
+                let div = document.createElement('div')
+                div.textContent = crimeTypes['count']
+                let parent = document.getElementById('crimeNumbers')
+                parent.appendChild(div)
+              }
 
 
               response.results.forEach((item) => {

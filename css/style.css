@@ -36,9 +36,10 @@ html, body {
   margin: auto;
 }
 
+
 #filterBox {
   width: 80%;
-  border: 2px solid #2196f3;
+  border: 2px solid #e0e0e0;
   border-radius: 5px;
   padding: 5%;
   text-align: initial;
@@ -56,7 +57,7 @@ html, body {
 
 #crimeTypeBox {
   width: 80%;
-  border: 2px solid #2196f3;
+  border: 2px solid #e0e0e0;
   border-radius: 5px;
   padding: 5%;
   text-align: initial;
@@ -222,6 +223,7 @@ h4 {
   margin-left: 20%;
   margin-right: 20%;
   margin-bottom: 2%;
+  margin-top: 5%;
 }
 
 #removeDataset {
@@ -271,15 +273,34 @@ h4 {
   margin-right: auto;
 }
 
-#statistics {
+#container {
   position: relative;
   color: #2196f3;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
+  width: 70%;
   border-radius: 5px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5%;
   padding-left: 5%;
   padding-top: 2%;
   padding-bottom: 2%;
+}
+#statistics {
+  position: relative;
+  display: inline-table;
+  width: 82%;
+}
+
+#crimeNumbers {
+  position: relative;
+  display: inline-table;
+  font-weight: bold;
+}
+
+#popularCrimes p {
+  position: relative;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
