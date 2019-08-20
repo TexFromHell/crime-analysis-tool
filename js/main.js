@@ -15,12 +15,10 @@ window.addEventListener('load', () => {
           data.append('uploadedFile', selectedFile);
 
           uploadFile('/uploadFile', data).then((response) => {
-            //TO >>>>
               let totalCrimes = response.results
               console.log(totalCrimes)
               let crimeTypes = response.crime
               console.log(crimeTypes)
-
 
               let max = Object.keys(crimeTypes)[0]
 
@@ -30,7 +28,6 @@ window.addEventListener('load', () => {
                 let parent = document.getElementById('crimeNumbers')
                 parent.appendChild(div)
 
-
                 if (crimeTypes[type].count > crimeTypes[max].count) {
                   max = type
                 }
@@ -38,6 +35,8 @@ window.addEventListener('load', () => {
 
                 console.log(max) //max name here
                 console.log(crimeTypes[max].count) //value of max
+                document.getElementById('total')
+                document.getElementById('popular').innerText = max
 
 
               response.results.forEach((item) => {
