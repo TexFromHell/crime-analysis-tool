@@ -22,12 +22,22 @@ window.addEventListener('load', () => {
               console.log(crimeTypes)
 
 
+              let max = Object.keys(crimeTypes)[0]
+
               Object.keys(crimeTypes).map((type) => {
                let div = document.createElement('div')
                 div.textContent = crimeTypes[type].count
                 let parent = document.getElementById('crimeNumbers')
                 parent.appendChild(div)
+
+
+                if (crimeTypes[type].count > crimeTypes[max].count) {
+                  max = type
+                }
               })
+
+                console.log(max) //max name here
+                console.log(crimeTypes[max].count) //value of max
 
 
               response.results.forEach((item) => {
