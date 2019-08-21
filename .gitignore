@@ -91,5 +91,5 @@ typings/
 .dynamodb/
 
 # local csv
-./uploads/*.csv
+./backend/uploads/*.csv
 
