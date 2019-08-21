@@ -3,8 +3,6 @@ window.addEventListener('load', () => {
     const submitButton = window.submit;
     let map = initMap()
 
-
-
     submitButton.addEventListener('click', () => {
 
         let selectedFile = window.uploadedFile.files[0]

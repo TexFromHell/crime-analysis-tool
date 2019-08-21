@@ -216,6 +216,18 @@ h4 {
   margin-right: auto;
 
 }
+#uploadFile {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+  position: relative;
+  display: inline-grid;
+}
+input#uploadedFile.inputfile {
+  font-size: 12px;
+  margin-bottom: 5%;
+}
 #dataset {
 
 }
@@ -233,7 +245,7 @@ h4 {
   margin-left: 20%;
   margin-right: 20%;
   margin-bottom: 2%;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 
 #removeDataset {
@@ -241,9 +253,13 @@ h4 {
   display: grid;
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 2%;
+  margin-bottom: 10%;
 }
-
+#question {
+  text-align: center;
+  color: #2196f3;
+  margin-top: 8%;
+}
 #database {
 
 }
@@ -272,7 +288,9 @@ h4 {
 }
 
 #newDataset {
-
+  text-align: center;
+  position: relative;
+  display: list-item;
 }
 
 
