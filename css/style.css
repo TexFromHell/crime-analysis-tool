@@ -217,7 +217,7 @@ h4 {
 
 }
 #uploadFile {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 2%;
   margin-right: 2%;
@@ -225,7 +225,7 @@ h4 {
   display: inline-grid;
 }
 input#uploadedFile.inputfile {
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 5%;
 }
 #dataset {
@@ -259,6 +259,12 @@ input#uploadedFile.inputfile {
   text-align: center;
   color: #2196f3;
   margin-top: 8%;
+}
+#question2 {
+  text-align: center;
+  color: #2196f3;
+  margin-top: 8%;
+  font-size: 16px;
 }
 #database {
 
