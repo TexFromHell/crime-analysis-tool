@@ -67,7 +67,7 @@ html, body {
 
 #map {
   height: 100%;
-  width: 95%;
+  width: 200%;
   float: left;
   border-left: 2px solid #2196f3;
   border-right: 2px solid #2196f3;
@@ -185,7 +185,6 @@ h4 {
 #qaMenu {
   margin-bottom: 5%;
   position: relative;
-  right: 6%;
 }
 
 #map-legend {
@@ -282,23 +281,30 @@ h4 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
-  padding-left: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding: 3%;
 }
 #statistics {
   position: relative;
   display: inline-table;
-  width: 82%;
+  width: 87%;
 }
 
 #crimeNumbers {
   position: relative;
   display: inline-table;
-  font-weight: bold;
+  width: 0%;
 }
 
-#popularCrimes p {
+#container2  {
+  text-align: center;
+}
+#container3 {
+  position: relative;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+#popular p{
   position: relative;
   display: table;
   margin-left: auto;

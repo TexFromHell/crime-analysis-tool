@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
     const submitButton = window.submit;
     let map = initMap()
 
+
+
     submitButton.addEventListener('click', () => {
 
         let selectedFile = window.uploadedFile.files[0]
@@ -15,29 +17,31 @@ window.addEventListener('load', () => {
           data.append('uploadedFile', selectedFile);
 
           uploadFile('/uploadFile', data).then((response) => {
-            //TO >>>>
-              let totalCrimes = response.results
+              let totalCrimes = response.results.length
               console.log(totalCrimes)
               let crimeTypes = response.crime
               console.log(crimeTypes)
 
-
+              let number = []
+              let list = Object.keys(crimeTypes)
               let max = Object.keys(crimeTypes)[0]
 
               Object.keys(crimeTypes).map((type) => {
-               let div = document.createElement('div')
+               let div = document.createElement('p')
                 div.textContent = crimeTypes[type].count
+                number.push(div.textContent)
                 let parent = document.getElementById('crimeNumbers')
                 parent.appendChild(div)
-
 
                 if (crimeTypes[type].count > crimeTypes[max].count) {
                   max = type
                 }
               })
-
                 console.log(max) //max name here
                 console.log(crimeTypes[max].count) //value of max
+
+                document.getElementById('total').innerText = totalCrimes
+                document.getElementById('popular').innerText = max
 
 
               response.results.forEach((item) => {
@@ -99,13 +103,58 @@ window.addEventListener('load', () => {
 
 
               })
-            })
+                //dataset graph
+                var ctx = document.getElementById('myChart');
+                //random bar color plugin.
+                var randomColorPlugin = {
 
+                beforeUpdate: function(chart) {
+                    var backgroundColor = [];
+                    var borderColor = [];
+
+                    for (var i = 0; i < chart.config.data.datasets[0].data.length; i++) {
+                    	var color = "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ",";
+                        backgroundColor.push(color + "1)");
+                        borderColor.push(color + "1)");
+                    }
+                    chart.config.data.datasets[0].backgroundColor = backgroundColor;
+
+                }
+              };
+              Chart.pluginService.register(randomColorPlugin);
+
+              new Chart(document.getElementById("doughnut-chart"), {
+                  type: 'doughnut',
+                  data: {
+                    labels: list,
+                    datasets: [
+                      {
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                        data: number,
+                      }
+                    ]
+                  },
+                  options: {
+                    borderWidth: 1,
+                    legend: {
+                      position: 'bottom'
+                    }
+                  },
+                  })
+              });
+
+
+                //ENABLE DATASET TAB
                 let disableQaDataset = document.getElementById('qaDataset')
                 disableQaDataset.removeAttribute("disabled");
 
                 let disableDatasetTab = document.getElementById('datasetBtn')
                 disableDatasetTab.removeAttribute("disabled")
+
+                //DISABLE UPLOAD
+                document.getElementById('qaUploadNew').setAttribute('disabled', true);
+                document.getElementById('newDatasetBtn').setAttribute('disabled', true);
+
                 instance2.close();
           }
 

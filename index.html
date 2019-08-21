@@ -173,7 +173,7 @@
             </div>
         </div>
 
-        <div id='qaMenu' data-target="slide-out-right" class="sidenav-trigger right">
+        <div id='qaMenu' data-target="slide-out-right" class="sidenav-trigger">
         <a class="waves-effect waves-light blue btn">
             <i class="material-icons large">menu</i>
         </a>
@@ -191,13 +191,12 @@
         </a>
       </div>
 
-      <div id='qaUploadNew' class='tabItem' data-target='newDataset'>
-        <a class="waves-effect waves-light blue btn tooltipped" data-position="left" data-tooltip="Upload new dataset to unlock dataset tab.">
-          <i class="material-icons large">add_circle</i>
-        </a>
-      </div>
+      <a id='qaUploadNew' data-target='newDataset' class="waves-effect waves-light blue btn tabItem">
+        <i class="material-icons large">add_circle</i>
+      </a>
 
-      <a id='qaDataset' disabled data-target='dataset' class="waves-effect waves-light blue btn tabItem">
+
+      <a id='qaDataset' data-target='dataset' class="waves-effect waves-light blue btn tabItem" disabled>
         <i class="material-icons large">data_usage</i>
       </a>
 
@@ -235,14 +234,13 @@
                     Options</a>
             </div>
 
-            <div id='uploadNewDataset' class="tabItem" data-target="newDataset">
-                <a class="waves-effect blue btn-large tooltipped" data-position="bottom" data-tooltip="Upload new dataset to unlock dataset tab." id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload
-                    New Dataset</a>
-            </div>
+            <a class="waves-effect blue btn-large tabItem tooltipped" data-position="bottom" data-target="newDataset" data-tooltip="Upload new dataset to unlock dataset tab." id='newDatasetBtn'><i class="material-icons left">add_circle</i>Upload
+                New Dataset</a>
 
-            <a class="waves-effect blue btn-large datasetBtn tabItem" id='datasetBtn' data-target="dataset" disabled>
-              <i class="material-icons left">data_usage</i>The Dataset
-                </a>
+
+          <a class="waves-effect blue btn-large datasetBtn tabItem" id='datasetBtn' data-target="dataset" disabled>
+            <i class="material-icons left">data_usage</i>The Dataset
+              </a>
 
         </div>
 
@@ -260,46 +258,39 @@
           <div id='container'>
             <div id='statistics' >
               <p>Anti-social behaviours:</p>
-              <div class="divider"></div>
               <p>Other crimes:</p>
-              <div class="divider"></div>
               <p>Vehicle crimes:</p>
-              <div class="divider"></div>
               <p>Violence and sexual offences:</p>
-              <div class="divider"></div>
               <p>Public orders:</p>
-              <div class="divider"></div>
               <p>Other thefts:</p>
-              <div class="divider"></div>
               <p>Criminal damage and arson:</p>
-              <div class="divider"></div>
               <p>Drugs:</p>
-              <div class="divider"></div>
               <p>Possession of weapons:</p>
-              <div class="divider"></div>
               <p>Theft from the persons:</p>
-              <div class="divider"></div>
               <p>Robberies:</p>
-              <div class="divider"></div>
               <p>Shopliftings:</p>
-              <div class="divider"></div>
               <p>Bicycle thefts:</p>
-              <div class="divider"></div>
               <p>Burglaries:</p>
-              <div class="divider"></div>
-              <p><b>TOTAL NUMBER OF CRIMES:</b></p>
-              <div class="divider"></div>
-              <p><b>MOST POPULAR:  <p id='popularCrimes'></b></p>
-            </div>
+          </div>
 
               <div id='crimeNumbers'>
-
             </div>
+
+            <div id='container2'>
+              <div class="divider"></div>
+            <p><b>TOTAL AMOUNT OF CRIMES: </b></p>
+            <p id='total'>p</b></p>
+            <div class="divider"></div>
+            <p><b>MOST POPULAR CRIME: </b></p>
+            <p id='popular'>p</b></p>
+          </div>
         </div>
 
             <div class="divider"></div>
             <h2>Graphical Visualisation</h2>
-
+            <div id='container3'>
+            <canvas id="doughnut-chart"></canvas>
+            </div>
 
             <div class="divider"></div>
             <div id='sendToDb'>
@@ -362,5 +353,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV2qZzCUDq27luPpApjoS3VUiQa3S2h8Y&callback=initMap" async
         defer></script>
 <script src="./framework/renderer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </body>
 </html>
