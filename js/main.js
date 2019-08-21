@@ -258,3 +258,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 })
+let dremove = document.getElementById('removedata')
+
+dremove.addEventListener('click', () => {
+  window.location.reload()
+})
