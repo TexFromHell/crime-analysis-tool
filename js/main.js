@@ -27,11 +27,19 @@ window.addEventListener('load', () => {
               let max = Object.keys(crimeTypes)[0]
 
               Object.keys(crimeTypes).map((type) => {
-               let div = document.createElement('p')
+
+                let stats = document.createElement('p')
+                stats.textContent = type
+
+                let nm = document.getElementById('statistics')
+                nm.appendChild(stats)
+
+                let div = document.createElement('p')
                 div.textContent = crimeTypes[type].count
                 number.push(div.textContent)
-                let parent = document.getElementById('crimeNumbers')
-                parent.appendChild(div)
+                let nr = document.getElementById('crimeNumbers')
+                nr.appendChild(div)
+
 
                 if (crimeTypes[type].count > crimeTypes[max].count) {
                   max = type
@@ -123,7 +131,8 @@ window.addEventListener('load', () => {
               };
               Chart.pluginService.register(randomColorPlugin);
 
-              new Chart(document.getElementById("doughnut-chart"), {
+              var ctx = document.getElementById('doughnut-chart').getContext('2d');
+              var myChart = new Chart(ctx, {
                   type: 'doughnut',
                   data: {
                     labels: list,
