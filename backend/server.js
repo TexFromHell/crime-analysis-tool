@@ -7,6 +7,16 @@ const app = express()
 const port = 3000
 const multer = require('multer')
 const csv = require('csv-parser');
+var bodyParser = require('body-parser');
+
+app.use(require("body-parser").json())
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.json({
+  limit: '200mb',
+  type: ['application/json', 'text/plain']
+}))
 
 //stores the uploaded files on the server
 var storage = multer.diskStorage({
@@ -20,24 +30,19 @@ var storage = multer.diskStorage({
     }
 });
 
-
-app.get('/', (req, res) => {
-    res.json({message: 'yo skrzek'})
-})
-
 var uploader = multer({storage: storage});
 
-app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
+let results = []
+let crimes = {}
 
-    let results = []
-    let crimes = {}
+app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
 
     fs.createReadStream(req.file.originalname)
         .pipe(csv())
         .on('data', (row) => {
-            console.log(row.Longitude, 'long');
-            console.log(row.Latitude, 'lat');
-            console.log(row['Crime type'], 'crime')
+            // console.log(row.Longitude, 'long');
+            // console.log(row.Latitude, 'lat');
+            // console.log(row['Crime type'], 'crime')
 
             let data = {
                 Id: row['Crime ID'],
@@ -60,11 +65,30 @@ app.post('/uploadFile', uploader.single('uploadedFile'), (req, res) => {
 
         })
         .on('end', () => {
-            console.log('CSV file successfully processed');
+            console.log('>> CSV file successfully processed.');
             res.json({results: results, crime: crimes})
         });
 })
 
-//server logic here
+app.post('/send', (req, res) => {
+    let dataset = JSON.stringify(req.body)
+    console.log('>> dataset acquired.')
+    res.json({message: 'dataset uploaded.'})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

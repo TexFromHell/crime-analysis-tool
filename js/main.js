@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
 
     const submitButton = window.submit;
@@ -15,10 +16,10 @@ window.addEventListener('load', () => {
           data.append('uploadedFile', selectedFile);
 
           uploadFile('/uploadFile', data).then((response) => {
+
               let totalCrimes = response.results.length
-              console.log(totalCrimes)
               let crimeTypes = response.crime
-              console.log(crimeTypes)
+              let dataResponse = response.results
 
               let number = []
               let list = Object.keys(crimeTypes)
@@ -109,6 +110,27 @@ window.addEventListener('load', () => {
 
 
               })
+
+              let send = document.getElementById('sendToDb')
+              send.addEventListener('click', () => {
+
+                  let data = {
+                    names: crimeTypes,
+                    info: dataResponse,
+                  }
+                  let option = {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                  }
+                  fetch('http://localhost:3000/send', option)
+                    .then(response => response.json())
+                    .then(json => console.log(json.message));
+            })
+
+
+
+
+
                 //dataset graph
                 var ctx = document.getElementById('myChart');
                 //random bar color plugin.
@@ -163,6 +185,8 @@ window.addEventListener('load', () => {
                 document.getElementById('newDatasetBtn').setAttribute('disabled', true);
 
                 instance2.close();
+
+
           }
 
           else {
